@@ -27,4 +27,6 @@ Les niveaux de circulation sont calculés par quartile (blanc : 0-25%, jaune : 2
 - **Le dossier "historique"** contient des données historiques de la version pdf par ville.
 
 
-ENGLISH: Follow-up of French SARS-CoV2 concentration in waste waters.
+(ENGLISH SUMMARY) 
+
+Follow-up of French SARS-CoV2 concentration in waste waters.
