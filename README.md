@@ -24,7 +24,7 @@ Les niveaux de circulation sont calculés par quartile (blanc : 0-25%, jaune : 2
 
 ![Carte des stations d'eau usées suivies avec Sum'Eau](mapSumEau.png)
 
-Le dossier "historique" contient des données historiques de la version pdf par ville (Donnees-SumEau_colors.Rmd).
+- **Le dossier "historique"** contient des données historiques de la version pdf par ville.
 
 
 ENGLISH: Follow-up of French SARS-CoV2 concentration in waste waters.
