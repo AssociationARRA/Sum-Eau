@@ -15,7 +15,7 @@ Fichiers disponibles (deux R markdown, un exemple de suivi et une carto)
 
 **Un exemple de suivi avec son explication :**
 
-![Suivi Sum'Eau à Amiens](mapSumEau.png)
+![Suivi Sum'Eau à Amiens](Explication_circulation_SumEau.png)
 
 **Carte des stations d'eaux usées suivies par Sum'Eau :**
 
