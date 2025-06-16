@@ -1,0 +1,102 @@
+---
+title: "Resume SumEau Par Ville (couleurs)"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+date: "`r format(Sys.time(), '%d/%m/%y')`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Données SUM'Eau - détail par station
+
+Ces données présentent la surveillance du Sars-Cov-2 dans les eaux usées dans 54 collectivités.
+
+Les données ouvertes et leur description se trouvent au lien suivant : https://www.data.gouv.fr/fr/datasets/surveillance-du-sars-cov-2-dans-les-eaux-usees-sumeau/
+
+> *Les valeurs sont calculées à partir du ratio entre la concentration de SARS-CoV-2 (cg L-1) et la concentration de NH4+ (mg L-1) dans les eaux usées. Les données sont ensuite modifiées en utilisant une régression de type LOESS, ce qui explique que les valeurs peuvent changer entre les mises à jour.*
+
+```{r, echo=FALSE}
+sumeau <- read.csv("https://www.data.gouv.fr/fr/datasets/r/2963ccb5-344d-4978-bdd3-08aaf9efe514",
+                   sep = ";", dec=",")
+
+library(reshape2)
+recent_sumeau = tail(sumeau, 30)
+molted=melt(recent_sumeau, id.vars=c("semaine"))
+names(molted)=c("semaine", "station", "value")
+
+molted=melt(sumeau, id.vars=c("semaine"))
+names(molted)=c("semaine", "station", "value")
+
+# create a color palette :
+# cols = rev(brewer.pal(3, "PRGn")) #c("blue","orange","black")
+# cols = c("grey98","#ffd288" , "#ff885f")
+cols = c("grey98","#ffd288" , "#f7551e")
+palette(cols)
+
+
+#plot all the stations :
+plotallstations <- lapply(c(1:45,47:55), function(i){
+	dt=molted[molted$station==names(summary(as.factor(molted$station)))[i],]
+	SUM=summary(dt$value)
+	
+	dt$riskestimate=dt$value # add a nez column
+	# replace the risk estimate by 1/2/3
+	dt[!is.na(dt$value) & dt$value>=SUM["3rd Qu."],]$riskestimate <- 3
+	dt[!is.na(dt$value) &dt$value>SUM["1st Qu."]&dt$value<SUM["3rd Qu."],]$riskestimate <- 2
+	dt[!is.na(dt$value) &dt$value<=SUM["1st Qu."],]$riskestimate <- 1
+	dt=tail(dt, 30)
+	
+par(mar=c(4,5,2,1),
+		yaxs="i")
+
+dt$semaine1 = gsub("S","W", dt$semaine)
+dt$semaine1 = paste(dt$semaine1, "-1", sep="")
+#ISOweek::ISOweek2date(dt$semaine1)
+#format(ISOweek::ISOweek2date(dt$semaine1), "%Y Week %W")
+#format(ISOweek::ISOweek2date(dt$semaine1), "%W")
+
+plot(dt$value~ISOweek::ISOweek2date(dt$semaine1), 
+		 pch=21, bg=as.factor(dt$riskestimate), type="b",
+		 bty="l", xaxt="n",
+		 cex=2, cex.lab=1.4, cex.axis=1.2,
+		 ylim=c(0, max(dt$value, na.rm=T)+0.1*max(dt$value, na.rm=T)),
+		 xlab="Semaines (2024-2025)", 
+		 ylab = "Concentration relative en SARS-CoV2",
+		 main=gsub("\\."," ", dt$station[1]))
+axis(side=1, at=ISOweek::ISOweek2date(dt$semaine1),
+		 gsub("2024|2025","",
+		 				 gsub("-S","", dt$semaine)))
+})
+
+
+```
+
+
+Classement des circulations par ville :
+
+```{r, echo=FALSE}
+
+# PROBLEM = no data for 2025-S02 STEU.DE..BREST..ZONE.PORTUAIRE. ???
+
+newdataset <- lapply(c(1:45,47:55), function(i){   # 47:55), function(i){
+	dt=molted[molted$station==names(summary(as.factor(molted$station)))[i],]
+	SUM=summary(dt$value)
+	
+	dt$riskestimate=dt$value # add a nez column
+	# replace the risk estimate by 1/2/3
+	dt[!is.na(dt$value) & dt$value>=SUM["3rd Qu."],]$riskestimate <- 3
+	dt[!is.na(dt$value) &dt$value>SUM["1st Qu."]&dt$value<SUM["3rd Qu."],]$riskestimate <- 2
+	dt[!is.na(dt$value) &dt$value<=SUM["1st Qu."],]$riskestimate <- 1
+	dt_end=tail(dt, 1)
+	#print(dt_end)
+	if(isTRUE(dt_end$riskestimate == 1)==TRUE) {print(paste(dt_end$station, ": ~ circulation relativement faible"))}
+		if(isTRUE(dt_end$riskestimate == 2)==TRUE) {print(paste(dt_end$station, ":  + circulation moyenne à forte"))}
+	 		if(isTRUE(dt_end$riskestimate == 3)==TRUE) {print(paste(dt_end$station, "+++++++ circulation très forte "))}
+	})
+
+	
+```
