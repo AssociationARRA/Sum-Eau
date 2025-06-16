@@ -3,7 +3,7 @@
 
 **Suivi du SRAS-CoV2 dans les eaux usées hexagonales et Corses.**
 
-Ces données présentent la surveillance du SRAS-CoV2 (syndrome respiratoire aigu sévère, coronavirus 2), responsable du COVID, dans les eaux usées dans 54 collectivités, sur les 30 dernières semaines.
+Ces données présentent la surveillance du SRAS-CoV2 (syndrome respiratoire aigu sévère, coronavirus 2), responsable du COVID, dans les eaux usées de 54 collectivités, sur les 30 dernières semaines.
 
 Les données ouvertes utilisées dans les documents sont disponibles sur datagouv.fr ([lien direct](https://www.data.gouv.fr/fr/datasets/surveillance-du-sars-cov-2-dans-les-eaux-usees-sumeau/)) et leur description explique que :
 
