@@ -12,12 +12,11 @@ Les données ouvertes et leur description se trouvent au lien suivant : https://
 Fichiers disponibles (deux R markdown, un exemple de suivi et une carto)
 - **Donneees-SumEau_colors.Rmd** (pour faire un pdf des villes par ordre alphabétique)
 - **DonneesSumEau_2025_color_Région.Rmd** (pour faire un html par région avec sommaire cliquable, à publier [sur notre site](https://associationarra.wordpress.com/suivi-regional-sumeau/))
-
-**Un exemple de suivi avec son explication :**
+- **Un exemple de suivi avec son explication :**
 
 ![Suivi Sum'Eau à Amiens](Explication_circulation_SumEau.png)
 
-**Carte des stations d'eaux usées suivies par Sum'Eau :**
+- **Carte des stations d'eaux usées suivies par Sum'Eau :**
 
 ![Carte des stations d'eau usées suivies avec Sum'Eau](mapSumEau.png)
 
