@@ -16,7 +16,7 @@ Deux fichiers R markdown, un exemple des graphique obtenus et une cartographie d
 - **DonneesSumEau_2025_color_Région.Rmd** (pour faire un html par région avec sommaire cliquable, à publier [sur notre site](https://associationarra.wordpress.com/suivi-regional-sumeau/))
 - **Un exemple de suivi avec son explication :**
 
-![Suivi Sum'Eau à Amiens](Explication_circulation_SumEau.png)
+![Suivi Sum'Eau à Amiens](Explications-SumEau.png)
 
 Les niveaux de circulation sont calculés par quartile (blanc : 0-25%, jaune : 25-75%, rouge : 75-100%) en prenant en compte **tout** l'historique des données (même si le graphique ne représente que les 30 dernières semaines les circulations représentent les niveaux depuis le début des mesures), et pour chaque station (les méthodologies peuvent différer selon les stations/entreprises qui font les dosages). 
 
