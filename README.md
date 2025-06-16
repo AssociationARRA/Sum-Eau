@@ -14,13 +14,13 @@ Les données ouvertes utilisées dans les documents sont disponibles sur datagou
 Deux fichiers R markdown, un exemple des graphique obtenus et une cartographie des stations :
 - **Donnees-SumEau_colors.Rmd** (pour faire un pdf des villes par ordre alphabétique)
 - **DonneesSumEau_2025_color_Région.Rmd** (pour faire un html par région avec sommaire cliquable, à publier [sur notre site](https://associationarra.wordpress.com/suivi-regional-sumeau/))
-- **Un exemple de suivi avec son explication :**
+- **Un exemple de suivi avec son explication** (image, pour Amiens en Semaine 23 - 2025)
 
 ![Suivi Sum'Eau à Amiens](Explications-SumEau.png)
 
 Les niveaux de circulation sont calculés par quartile (blanc : 0-25%, jaune : 25-75%, rouge : 75-100%) en prenant en compte **tout** l'historique des données (même si le graphique ne représente que les 30 dernières semaines les circulations représentent les niveaux depuis le début des mesures), et pour chaque station (les méthodologies peuvent différer selon les stations/entreprises qui font les dosages). 
 
-- **Carte des stations d'eaux usées suivies par Sum'Eau :**
+- **La carte des stations d'eaux usées suivies par le réseau Sum'Eau** (image, juin 2025)
 
 ![Carte des stations d'eau usées suivies avec Sum'Eau](mapSumEau.png)
 
