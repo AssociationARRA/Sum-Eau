@@ -3,11 +3,12 @@
 
 **Suivi du SRAS-CoV2 dans les eaux usées hexagonales et Corses.**
 
-Ces données présentent la surveillance du Sars-Cov-2 dans les eaux usées dans 54 collectivités.
+Ces données présentent la surveillance du Sars-Cov-2 dans les eaux usées dans 54 collectivités, sur les 30 dernières semaines.
 
 Les données ouvertes et leur description se trouvent au lien suivant : https://www.data.gouv.fr/fr/datasets/surveillance-du-sars-cov-2-dans-les-eaux-usees-sumeau/
 
 > *Les valeurs sont calculées à partir du ratio entre la concentration de SARS-CoV-2 (cg L-1) et la concentration de NH4+ (mg L-1) dans les eaux usées. Les données sont ensuite modifiées en utilisant une régression de type LOESS, ce qui explique que les valeurs peuvent changer entre les mises à jour.*
+
 
 Fichiers disponibles (deux R markdown, un exemple de suivi et une carto)
 - **Donnees-SumEau_colors.Rmd** (pour faire un pdf des villes par ordre alphabétique)
@@ -16,9 +17,13 @@ Fichiers disponibles (deux R markdown, un exemple de suivi et une carto)
 
 ![Suivi Sum'Eau à Amiens](Explication_circulation_SumEau.png)
 
+Les niveaux de circulation sont calculés par quartile (blanc : 0-25%, jaune : 25-75%, rouge : 75-100%) en prenant en compte **tout** l'historique des données (même si le graphique ne représente que les 30 dernières semaines les circulations représentent les niveaux depuis le début des mesures), et pour chaque station (les méthodologies peuvent différer selon les stations/entreprises qui font les dosages). 
+
 - **Carte des stations d'eaux usées suivies par Sum'Eau :**
 
 ![Carte des stations d'eau usées suivies avec Sum'Eau](mapSumEau.png)
+
+Le dossier "historique" contient des données historiques de la version pdf par ville (Donnees-SumEau_colors.Rmd).
 
 
 ENGLISH: Follow-up of French SARS-CoV2 concentration in waste waters.
