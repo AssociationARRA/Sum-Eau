@@ -18,7 +18,7 @@ Deux fichiers R markdown, un exemple des graphique obtenus et une cartographie d
 
 ![Suivi Sum'Eau à Amiens](Explications-SumEau.png)
 
-Les niveaux de circulation sont calculés par quartile (blanc : 0-25%, jaune : 25-75%, rouge : 75-100%) en prenant en compte **tout** l'historique des données (même si le graphique ne représente que les 30 dernières semaines les circulations représentent les niveaux depuis le début des mesures), et pour chaque station (les méthodologies peuvent différer selon les stations/entreprises qui font les dosages). 
+Les niveaux de circulation sont recalculés chaque semaine par quartile de fréquence (blanc : 0-25%, jaune : 25-75%, rouge : 75-100%) en prenant en compte **tout** l'historique des données. Le graphique représente donc uniquement les 30 dernières semaines de circulation, mais les couleurs des points représentent les statistiques depuis le début des mesures. Les niveaux sont calculés séparément pour chaque station, parce que les méthodologies peuvent différer selon les stations/entreprises qui font les dosages.
 
 - **La carte des stations d'eaux usées suivies par le réseau Sum'Eau** (image, juin 2025)
 
